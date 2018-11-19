@@ -51,7 +51,6 @@ def preorder(tree):
     if(tree.right!=None):
         preorder(tree.right)
         
-#------------------------------------------------#        
 
 #if __name__ == '__main__':
  #   t=tree_insert(None,6);
@@ -62,8 +61,6 @@ def preorder(tree):
   #  tree_insert(t,4)
    # tree_insert(t,9)
   #  preorder(t)
-
-# This is the Function to open and read the Paragraph
 
 def OpenPara():
     paragraph = open("ParagraphTask1.txt","r")
