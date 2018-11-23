@@ -53,6 +53,9 @@ def preorder(tree):
         
 #------------------------------------------------#        
 
+
+
+#
 #if __name__ == '__main__':
  #   t=tree_insert(None,6);
   #  tree_insert(t,5)
@@ -65,10 +68,33 @@ def preorder(tree):
 
 # This is the Function to open and read the Paragraph
 
+# This is my line split ... To be continued.
+
+
+
+
 def OpenPara():
     paragraph = open("ParagraphTask1.txt","r")
-    print (paragraph.read())
-OpenPara()
+    para = paragraph.read().lower().split()
+    return para    
+    
+
+lst = OpenPara()
+
+t = tree_insert(None,lst[0])
+for i in range (len(lst)):
+    tree_insert(t,lst[i])
+preorder(t)
+
+
+
+
+
+
+#OpenPara = open("ParagraphTask1.txt", "r")
+#wordsfinallysplit = f.split()
+
+
 
     
  
