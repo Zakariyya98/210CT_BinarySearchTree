@@ -87,17 +87,39 @@ for i in range (len(lst)):
 preorder(t)
 
 
+#def TreeFind(tree, item):
+ #   if tree.value == item or tree == 0:
+  #      if tree == None:
+   #         print("Item not found")
+        #print(tree.value)
+        #return tree
+    #elif item < tree.value:
+     #   print(tree.value)
+      #  return TreeFind(tree.left, item)
+    #else:
+     #   print(tree.value)
+      #  return TreeFind(tree.right, item)
+    #return 0
+#print (TreeFind)
 
+def TreeFind (tree, item,):
+    if tree == None:
+        print("Item not Found")
+    elif tree.value == item:
+        print(tree.value)
+        print("Yes")
+    elif item < tree.value:
+        TreeFind(tree.left, item)
+        print(tree.value, "Searching Left side of tree")
+    else:
+        TreeFind(tree.right, item)
+        print(tree.value, "Searching Right side of tree")
+#    TreeFind(tree,insert("Enter a word to find: "))
+#print(TreeFind)
 
+user = input("Enter a word to find: ")
+TreeFind(t, user)
 
 
 #OpenPara = open("ParagraphTask1.txt", "r")
 #wordsfinallysplit = f.split()
-
-
-
-    
- 
-
-
-
