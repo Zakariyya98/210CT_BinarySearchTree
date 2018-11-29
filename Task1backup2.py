@@ -12,7 +12,7 @@ class BinTreeNode(object):
         self.left=None
         self.right=None
         
-def tree_insert(tree, item):
+def tree_insert( tree, item):
     if tree==None:
         tree=BinTreeNode(item)
     else:
@@ -52,7 +52,7 @@ def preorder(tree):
         preorder(tree.right)
         
 #------------------------------------------------#        
-#def node_delete(self, node)
+
 
 
 #
