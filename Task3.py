@@ -28,6 +28,12 @@ class Graph():
             lst2 = lst.pop()
             if lst2 == w:
                 visited.append(lst2)
+                
+                printtxt = open("isPath.txt", "w+")
+                printtxt.write("This is the Path traversed" "\n")
+                printtxt.write(str(visited))
+                printtxt.close()
+                
                 break
             if lst2 not in visited:
                 visited.append(lst2)
