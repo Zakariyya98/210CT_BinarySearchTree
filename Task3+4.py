@@ -1,4 +1,5 @@
 #Task 3 Unweighted, Undirected Graph
+
 class Vertex():
     def __init__ (self, nodes):
         #Nodes
@@ -19,7 +20,11 @@ class Graph():
     
     def print(self):
         print(self.list)
-            
+#Title: DFS Pseudocode
+#Author: Hintea, D.
+#Date November 2018
+#Availability: http://cumoodle.coventry.ac.uk located in 210CT Week 7
+#I Converted the Pseudocode to Python, added some of my own code too            
     def isPath(self, v,w):
         lst = []
         visited = []
@@ -41,7 +46,11 @@ class Graph():
                     lst.append(lst3)
         return visited
     
-    
+#Title: DFS Pseudocode
+#Author: Hintea, D.
+#Date November 2018
+#Availability: http://cumoodle.coventry.ac.uk located in 210CT Week 7
+#I Converted the Pseudocode to Python, added some of my own code too     
     def DFS_Code(self, v):
         lst = []
         visited = []
@@ -64,9 +73,12 @@ class Graph():
         if len(self.DFS_Code (0)) == len(self.list):
             print("Yes")
         else:
-            print("No")
+            print("No")         
 #-----------------------------------------------------#
-            
+#These make up the nodes and connections in the graph, The Vertex being the Nodes and
+#the edges being the connetions/adjecency. The last function call will check to see if
+#the graph is connected.          
+
 G = Graph()
 G.add_vertex(0)
 G.add_vertex(1)
