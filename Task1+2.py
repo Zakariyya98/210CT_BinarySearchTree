@@ -123,14 +123,17 @@ def Node_Delete(tree, item):
             return None
         if tree.left != None and tree.right == None:
             temp = tree.left
+            print("Node with left child deleted")
             return temp
         if tree.right!=None and tree.left == None:
             temp = tree.right
+            print("Node with right child deleted")
             return temp
         else:
             temp = minNode(tree.right)
             tree.value = temp.value
             tree.right = Node_Delete(tree.right, temp.value)
+            print("Node with two children deleted")
     return tree
 #This Function will replace the node if the parent node gets deleted
 def minNode(item):
