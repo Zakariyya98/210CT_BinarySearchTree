@@ -1,12 +1,14 @@
 #Task 3 Unweighted, Undirected Graph
 
+#The Vertex class will create the vertex to be instantiated with a list with
+#the list as the object.
 class Vertex():
     def __init__ (self, nodes):
         #Nodes
         self.vertex = nodes
         #Connections/Adjecenies
         self.edge = []
-    
+#This class will allow the structure for the graph to be created    
 class Graph():
     def __init__ (self):   
         self.list = {}
@@ -24,7 +26,10 @@ class Graph():
 #Author: Hintea, D.
 #Date November 2018
 #Availability: http://cumoodle.coventry.ac.uk located in 210CT Week 7
-#I Converted the Pseudocode to Python, added some of my own code too            
+#I Converted the Pseudocode to Python, added some of my own code too 
+
+#This function will show check if there is a path between two nodes and will print
+#the path traversal to a txt file.
     def isPath(self, v,w):
         lst = []
         visited = []
@@ -50,7 +55,11 @@ class Graph():
 #Author: Hintea, D.
 #Date November 2018
 #Availability: http://cumoodle.coventry.ac.uk located in 210CT Week 7
-#I Converted the Pseudocode to Python, added some of my own code too     
+#I Converted the Pseudocode to Python, added some of my own code too  
+
+#This function will traverse the graph visting each vertex, it will use the current vertex
+#edge to check the next vertex which is unvisited, as it traverses through each vertex
+#it will mark them as visited and will keep repeating until all are marked.   
     def DFS_Code(self, v):
         lst = []
         visited = []
@@ -68,6 +77,8 @@ class Graph():
         return visited
     
 #Task 4 isConnected Implementation
+#This Function will check to see if the Graph is Connected to every node and if each node is connected
+#it will print yes or if its not connected will print no.
 
     def isConnected(self):
         if len(self.DFS_Code (0)) == len(self.list):

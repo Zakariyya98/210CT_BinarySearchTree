@@ -1,12 +1,15 @@
 #Task 3 Unweighted, Undirected Graph to use in Task 5 too
 
+#The Vertex class will create the vertex to be instantiated with a list with
+#the list as the object.
 class Vertex():
     def __init__ (self, nodes):
         #Nodes
         self.vertex = nodes
         #Connections/Adjecenies
         self.edge = []
-    
+        
+#This class will allow the structure for the graph to be created    
 class Graph():
     def __init__ (self):   
         self.list = {}
@@ -29,7 +32,10 @@ class Graph():
 #Date November 2018
 #Availability: http://cumoodle.coventry.ac.uk located in 210CT Week 7
 #I Converted the Pseudocode to Python, added some of my own code too 
-       
+
+#This function will traverse the graph using edges, it searches from the current vertex, the algorithm is
+#slightly different as it uses a Queue to store which vertices to visit next, it will find he shortest path
+#and will move to the next vertex once all edges have been explored.
     def BFS_Code (self, v):
         lst = []
         visited = []
@@ -52,7 +58,10 @@ class Graph():
 #Date November 2018
 #Availability: http://cumoodle.coventry.ac.uk located in 210CT Week 7
 #I Converted the Pseudocode to Python, added some of my own code too 
-  
+
+#This function will traverse the graph visting each vertex, it will use the current vertex
+#edge to check the next vertex which is unvisited, as it traverses through each vertex
+#it will mark them as visited and will keep repeating until all are marked.
     def DFS_Code(self, v):
         lst = []
         visited = []

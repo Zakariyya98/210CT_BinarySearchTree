@@ -5,7 +5,7 @@
 # Start of the Used Code
 
 #Task 1 Build a Binary Search Tree
-
+#This class will allow the items to be inserted into a Binary Search Tree
 class BinTreeNode(object):
 
     def __init__(self, value):
@@ -54,6 +54,8 @@ def in_order(tree):
 #Availability: http://cumoodle.coventry.ac.uk located in 210CT Week 5
 #I Converted the Pseudocode to Python 
 
+#This will print the tree in PreOrder
+
 def preorder(tree):
     print(tree.value)
     if(tree.left!=None):
@@ -91,6 +93,11 @@ preorder(t)
 #Date November 2018
 #Availability: http://cumoodle.coventry.ac.uk located in 210CT Week 5
 #I Converted the Pseudocode to Python, added some of my own code to this too
+
+#This function will search the tree for the word the user wants to find in the tree
+#as its a binary search it will check to see if the item entered is higher on the left side or
+#right side, after it finds which side of the tree is the highest it will then search that side
+#to find the node either the left side or the right side.
 def TreeFind (tree, item,):
     if tree == None:
         print("Item not Found")
