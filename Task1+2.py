@@ -2,7 +2,6 @@
 # Author: Hintea, D.
 # Date: November 2018
 # Availability: http://cumoodle.coventry.ac.uk located in 210CT Week 5
-
 # Start of the Used Code
 
 class BinTreeNode(object):
@@ -51,57 +50,19 @@ def preorder(tree):
     if(tree.right!=None):
         preorder(tree.right)
         
-#------------------------------------------------#        
-#def node_delete(self, node)
-
-
-#
-#if __name__ == '__main__':
- #   t=tree_insert(None,6);
-  #  tree_insert(t,5)
-   # tree_insert(t,7)
-#    tree_insert(t,1)
- #   tree_insert(t,3)
-  #  tree_insert(t,4)
-   # tree_insert(t,9)
-  #  preorder(t)
-
-# This is the Function to open and read the Paragraph
-
-# This is my line split ... To be continued.
-
-
-
-
+#--------------------------------------------#
 def OpenPara():
     paragraph = open("ParagraphTask1.txt","r")
     para = paragraph.read().lower().split()
+    freq = {}
+    for i in para:
+        if i not in freq:
+            freq[i] = 1
+        else:
+            freq[i] +=1
+    print(freq) 
     return para    
     
-
-lst = OpenPara()
-
-t = tree_insert(None,lst[0])
-for i in range (len(lst)):
-    tree_insert(t,lst[i])
-preorder(t)
-
-
-#def TreeFind(tree, item):
- #   if tree.value == item or tree == 0:
-  #      if tree == None:
-   #         print("Item not found")
-        #print(tree.value)
-        #return tree
-    #elif item < tree.value:
-     #   print(tree.value)
-      #  return TreeFind(tree.left, item)
-    #else:
-     #   print(tree.value)
-      #  return TreeFind(tree.right, item)
-    #return 0
-#print (TreeFind)
-
 def TreeFind (tree, item,):
     if tree == None:
         print("Item not Found")
@@ -114,12 +75,52 @@ def TreeFind (tree, item,):
     else:
         TreeFind(tree.right, item)
         print(tree.value, "Searching Right side of tree")
-#    TreeFind(tree,insert("Enter a word to find: "))
-#print(TreeFind)
 
-user = input("Enter a word to find: ")
-TreeFind(t, user)
+#Task 2 Delete Node Function
+        
+def Node_Delete(tree, item):
+    if tree == None:
+        print("Node Not Found")
+    elif item < tree.value:
+        tree.left = Node_Delete(tree.left, item)
+        
+    elif item > tree.value:
+        tree.right = Node_Delete(tree.right, item)
+        
+    elif item == tree.value:
+        if tree.left == None and tree.right == None:
+            print("Node without children deleted")
+            return None
+        if tree.left != None and tree.right == None:
+            temp = tree.left
+            
+            return temp
+        if tree.right!=None and tree.left == None:
+            temp = tree.right
+            
+            return temp
+        else:
+            temp = minNode(tree.right)
+            tree.value = temp.value
+            tree.right = Node_Delete(tree.right, temp.value)
+    return tree
 
+def minNode(item):
+    tree = item
+    if tree.left != None:
+        return minNode(tree.left)
+    return tree
 
-#OpenPara = open("ParagraphTask1.txt", "r")
-#wordsfinallysplit = f.split()
+#End of Task 2 Delete Node Code 
+          
+lst = OpenPara()
+for i in range (len(lst)):
+    if i < 1:
+        t = tree_insert(None,lst[i])
+    else:
+        tree_insert(t,lst[i])
+preorder(t)
+TreeFind(t, input("Enter a word to find: "))
+Node_Delete(t,input("Enter a word to delete: "))
+print()
+preorder(t)
