@@ -1,4 +1,5 @@
-#Task 3 Unweighted, Undirected Graph
+#Task 3 Unweighted, Undirected Graph to use in Task 5 too
+
 class Vertex():
     def __init__ (self, nodes):
         #Nodes
@@ -20,9 +21,15 @@ class Graph():
     def print(self):
         print(self.list)
         
+#Start of Task 5
         
 #Breadth-First Search Implementation 
-        
+#Title: BFS Pseudocode
+#Author: Hintea, D.
+#Date November 2018
+#Availability: http://cumoodle.coventry.ac.uk located in 210CT Week 7
+#I Converted the Pseudocode to Python, added some of my own code too 
+       
     def BFS_Code (self, v):
         lst = []
         visited = []
@@ -40,6 +47,11 @@ class Graph():
         return visited
     
 #Depth-First Search Implementation
+#Title: DFS Pseudocode
+#Author: Hintea, D.
+#Date November 2018
+#Availability: http://cumoodle.coventry.ac.uk located in 210CT Week 7
+#I Converted the Pseudocode to Python, added some of my own code too 
   
     def DFS_Code(self, v):
         lst = []
@@ -56,6 +68,10 @@ class Graph():
         printtxt.write(str(visited))
         printtxt.close()
         return visited
+
+#These make up the nodes and connections in the graph, The Vertex being the Nodes and
+#the edges being the connetions/adjecency. The last function call will check to see if
+#the graph is connected.
 
 G = Graph()
 G.add_vertex(0)
